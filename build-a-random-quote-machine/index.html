@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random Quote Machine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script>
+
+        // Get a random number. The maximum is exclusive and the minimum is inclusive.
+        function getRandomNumber(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        function getNewQuote() {
+            // Object containing quotes
+            const QUOTES = {
+            0: {
+                'quote': 'What do you most yearn for — to defend your own beliefs or to see the world as clearly as you possibly can?',
+                'author': 'Julia Galef'
+            },
+            1: {
+                'quote': 'Once we accept our limits, we go beyond them.',
+                'author': 'Albert Einstein'
+            },
+            2: {
+                'quote': 'Nothing will work unless you do.',
+                'author': 'Maya Angelou'
+            },
+            3: {
+                'quote': 'I hated every minute of training, but I said, "Don\'t quit. Suffer now and live the rest of your life as a champion".',
+                'author': 'Muhammad Ali'
+            },
+            4: {
+                'quote': 'When we stop trying, we fail.',
+                'author': 'Unknown'
+            },
+            5: {
+                'quote': 'The more I learn, the more I realise how much I don’t know.',
+                'author': 'Albert Einstein'
+            },
+            6: {
+                'quote': 'You must be the change you want to see in the world.',
+                'author': 'Gandhi'
+            },
+            7: {
+                'quote': 'Only you are responsible for how you treat others and what you put out in the world.',
+                'author': 'Laura Whitmore'
+            },
+            8: {
+                'quote': 'Resentment is like drinking a poison and hoping it will kill your enemies.',
+                'author': 'Unknown'
+            },
+            9: {
+                'quote': 'When I look up at the stars, I feel like I am looking at the universe. But in fact, of course, I am the universe looking at itself.',
+                'author': 'David Baker'
+            },
+            10: {
+                'quote': 'The first time you tied your shoe lace it wasn’t easy. You had to work at it and practice and then the next thing you know, you’ve got your shoes tied.',
+                'author': 'Bob Ross'
+            },
+            11: {
+                'quote': 'Looking for justice and it\'s just us.',
+                'author': '"It Ain\'t Fair" by The Roots'
+            },
+            12: {
+                'quote': 'We are what we pretend to be, so we must be careful about what we pretend to be.',
+                'author': 'Kurt Vonnegut'
+            },
+            13: {
+                'quote': 'When you remove a person from your life, you also remove the seeds that they can plant for you.',
+                'author': 'Shea Diamond'
+            },
+            14: {
+                'quote': 'Sucking at something is the first step to being sort of good at something.',
+                'author': 'Jake the Dog'
+            },
+            15: {
+                'quote': 'That some achieve great success is proof to all others can achieve it as well..',
+                'author': 'Abraham Lincoln'
+            },
+            16: {
+                'quote': 'Not to know what to place before you were born is to remain forever a child.',
+                'author': 'Cicero'
+            },
+            17: {
+                'quote': 'The greatest of all weaknesses is the fear of appearing weak.',
+                'author': 'J.B. Bossuet'
+            },
+            }
+
+            // Select from object quote using a random number variable as index
+            let randomQuoteNumber = getRandomNumber(0,Object.keys(QUOTES).length)
+            document.getElementById("text").innerHTML = QUOTES[randomQuoteNumber]['quote'];
+            document.getElementById("author").innerHTML = QUOTES[randomQuoteNumber]['author'];
+        
+            // Change glow colour
+            const COLOURS = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            let randomColourNumber = getRandomNumber(0,COLOURS.length)
+            document.querySelector(':root').style.setProperty('--glow-colour', COLOURS[randomColourNumber]);
+        
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Random Quote Machine</h1>
+    <h2>By Jonathan Woolley</h2>
+    <div id="quote-box">
+        <p id="text">It's we humans who make God, in our great need. God, if he existed, would have no need of humanity.</p>
+        <p id="author">William Nicholson</p>
+        <button id="new-quote" onclick="getNewQuote()">New quote</button>
+        <a id="tweet-quote" href="twitter.com/intent/tweet"><i class="fab fa-twitter-square"></i></a>
+    </div>
+</body>
+</html>

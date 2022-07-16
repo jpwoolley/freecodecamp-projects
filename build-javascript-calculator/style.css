@@ -1,0 +1,151 @@
+body {
+    background-color: #FB9850;
+}
+
+#calculator, .button, #display {
+    border-radius: 5px;
+}
+
+#calculator {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    grid-template-areas: 
+    'display display display display'
+    'button_clear button_lbracket button_rbracket button_multiply'
+    'button_seven button_eight button_nine button_minus'
+    'button_four button_five button_six button_add'
+    'button_one button_two button_three button_divide'
+    'button_0 button_point button_result button_result';
+
+    grid-gap: 10px 15px;
+
+    margin: auto;
+    max-width: 300px;
+    height: 300px;
+    top: 50%;
+    border: 2px solid black;
+    padding: 2rem;
+    background-color: #515151;
+}
+
+#display {
+    grid-area: display;
+    background-color: black;
+    border: black 1px solid;
+
+    font-family: 'Orbitron', sans-serif;
+    text-align: right;
+    color: #5B84C4;
+
+    height: 2rem;
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#displayCurrent, #displayFinal {
+    height: 1em;
+}
+
+.button {
+    height: 2rem;
+}
+
+.button_operator {
+    background-color: #2E8BC0;
+}
+
+.button_clear {
+    background-color: #B1D4E0;
+}
+
+.button_special {
+    background-color: #0C2D48;
+}
+
+.button_result {
+    background-color: #145DA0;
+}
+
+.button_number {
+    background-color: #F2F2F2;
+}
+
+#clear {
+    grid-area: button_clear;
+}
+
+#lbracket {
+    grid-area: button_lbracket;
+    color: white;
+}
+
+#rbracket {
+    grid-area: button_rbracket;
+    color: white;
+}
+
+#multiply {
+    grid-area: button_multiply;
+}
+
+#divide {
+    grid-area: button_divide;
+}
+
+#subtract {
+    grid-area: button_minus;
+}
+
+#add {
+    grid-area: button_add;
+}
+
+#decimal {
+    grid-area: button_point;
+    color: white;
+}
+
+#equals {
+    grid-area: button_result;
+}
+
+#one {
+    grid-area: button_one;
+}
+
+#two {
+    grid-area: button_two;
+}
+
+#three {
+    grid-area: button_three;
+}
+
+#four {
+    grid-area: button_four;
+}
+
+#five {
+    grid-area: button_five;
+}
+
+#six {
+    grid-area: button_six;
+}
+
+#seven {
+    grid-area: button_seven;
+}
+
+#eight {
+    grid-area: button_eight;
+}
+
+#nine {
+    grid-area: button_nine;
+}

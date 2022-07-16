@@ -1,0 +1,9 @@
+function multiplesOf3and5(number) {
+  let sumThese = [];
+  for(let i = 3; i < number; i++){
+    if((i % 3 === 0) || (i % 5 === 0)){
+      sumThese.push(i)
+    }
+  }
+  return sumThese.reduce((a,b) => a + b);
+}

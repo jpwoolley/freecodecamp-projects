@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #0E242E;
+      color: #eee;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    header > h1 {
+      text-decoration: underline;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+    .center {
+      display: block;
+      margin: auto;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #form-article {
+      background-color: #111;
+      color: #eee;
+      border-radius: 3%;
+      padding: 20px;
+      width: 80%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main class="flex-container">
+
+    <header class="center">
+      <h1 id="title">Survey Form</h1>
+      <p id="description">Please use the form below to share you opinion on our site</p>
+      <p>Note: you must be at least 18 to use this form.</p>
+    </header>
+
+    <article id="form-article" class="center">
+      <form id="survey-form" action="#">
+        <fieldset>
+          <legend>Personal details</legend>
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Name" required>
+          <label for"number">Age</label>
+          <input id="number" type="number" placeholder="Age" min="18" max="99" required>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Email" required>
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>How did you hear about us?</legend>
+          <label for="search-engine">
+            <input id="search-engine" value="search-engine" type="radio" name="how-hear-about-us">Search engine
+          </label>
+          <br>
+          <label for="television">
+            <input id="television" value="television" type="radio" name="how-hear-about-us">Television
+          </label>
+          <br>
+          <label for="newspaper">
+            <input id="newspaper" value="newspaper" type="radio" name="how-hear-about-us">Newspaper
+          </label>
+          <br>
+          <label for="radio">
+            <input id="radio" value="radio" type="radio" name="how-hear-about-us">Radio
+          </label>
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>I wish I'd seen some of this on your website (pick any that apply)</legend>
+          <label for="interesting-content">
+            <input id="interesting-content" value="interesting-content" type="checkbox" name="what-you-like-to-see">Interesting content
+          </label>
+          <br>
+          <label for="design-choices">
+            <input id="design-choices" value="design-choices" type="checkbox" name="what-you-like-to-see">Appealing design choices
+          </label>
+          <br>
+          <label for="coding-prowess">
+            <input id="coding-prowess" value="coding-prowess" type="checkbox" name="what-you-like-to-see">Coding prowess
+          </label>
+          <br>
+          <label for="purpose">
+            <input id="purpose" value="purpose" type="checkbox" name="what-you-like-to-see">Purpose
+          </label>
+          <br>
+          <label for="obligatory-kittens">
+            <input id="obligatory-kittens" value="obligatory-kittens" type="checkbox" name="what-you-like-to-see">Pictures of cute kittens
+          </label>
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>Overall, my opinion is that your site is</legend>
+          <label for="opinion">
+            <select id="dropdown" name="opinion">
+              <option value="excellent">Excellent</option>
+              <option value="good">Good</option>
+              <option value="bad">Bad</option>
+              <option value="it-hurts-me">It hurts me</option>
+            </select>
+          </label>
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>Additional comments</legend>
+          <label for="comments">
+            <textarea id="comments" placeholder="My means thoughts..."></textarea>
+          </label>
+        </fieldset>
+        <br>
+        <input id="submit" type="submit">
+      </form>
+    </article>
+
+  </main>
+
+</body>
+
+</html>

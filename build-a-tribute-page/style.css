@@ -1,0 +1,89 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lora', serif;
+}
+
+body {
+    background-color: black;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+#img-div {
+    position: fixed;
+    bottom: 0px;
+    z-index: -1;
+    transform: translateX(25%);
+}
+
+img {
+    filter: grayscale(100%);
+    max-width: 1024px;
+    display: block;
+}
+
+h1 {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    z-index: 1;
+    padding: 1em;
+    color: white;
+}
+
+h2 {
+    color: white;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+#tribute-info {
+    margin-top: 6em;
+}
+
+.list-item {
+    width: 75ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li:nth-child(odd) {
+    float: left;
+    margin-left: 10%;
+    margin-right: auto;
+}
+
+li:nth-child(even) {
+    float: right;
+    margin-right: 10%;
+    margin-left: auto;
+}
+
+
+#tribute-links {
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    height: 2em;
+}
+
+#tribute-links a {
+    color: white;
+    display: block;
+}
+
+.card {
+    background-color: transparent; 
+    backdrop-filter: blur(5px);
+    color: white;
+    border: 2px double white;
+    border-radius: 10px;
+
+    padding: 1em;
+    margin-bottom: 1em;
+}

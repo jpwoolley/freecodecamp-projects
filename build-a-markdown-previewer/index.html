@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Prata&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="flex-container">
+        <h1 id="main-heading">Markdown Previewer</h1>
+        <div class="flex-item">
+            <h2 id="sub-heading">Input</h2>
+            <textarea  id="editor"></textarea>
+        </div>
+        <div class="flex-item">
+            <h2 id="sub-heading">Output</h2>
+            <div  id="preview"></div>
+        </div>
+    </main>
+    <script src="javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>

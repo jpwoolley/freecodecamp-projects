@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerShell Documentation</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="main-header flex-container">
+    <nav id="navbar">
+      <header>
+        <h1>PowerShell Documentation</h1>
+      </header>
+      <ul>
+        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+        <li><a href="#Syntax_and_command_types" class="nav-link">Syntax and command
+            types</a></li>
+        <li><a href="#Modules" class="nav-link">Modules</a></li>
+        <li><a href="#Properties" class="nav-link">Properties</a>
+        </li>
+        <li><a href="#PowerShell_Remoting" class="nav-link">PowerShell remoting</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-doc" class="flex-container">
+
+    <section id="Introduction" class="main-section">
+      <header>
+        <h2 class="main-section-headers">Introduction</h2>
+      </header>
+      <p>This site provides a brief overview of PowerShell: what it is and how to use it.</p>
+      <p>PowerShell is a cross-platform task automation and configuration management framework, consisting of a
+        command-line shell and scripting language. Unlike most shells, which accept and return text, PowerShell is built
+        on top of the .NET Common
+        Language Runtime (CLR), and accepts and returns .NET objects. This fundamental change brings entirely new tools
+        and methods for automation.</p>
+    </section>
+
+    <section id="Syntax_and_command_types" class="main-section">
+      <header>
+        <h2 class="main-section-headers">Syntax and command types</h2>
+      </header>
+      <p>Native PowerShell commands are known as cmdlets. They use a Verb-Noun command syntax. The first part of the
+        command is what you want to do (i.e. Get, Set, Clear) and the second part is what you want to do it to (i.e.
+        Service, Module,
+        Eventlog). You therefore end up with a command which looks like the following:</p>
+      <code>Get-Service</code>
+      <p>In addition to commands you can specify parameters and arguments. This isn't always necessarily for PowerShell
+        to work, since sometimes a parameter will have a defualt argument, although it is essential when you're
+        scripting for
+        readability.</p>
+      <code>Get-Service -Name BITS</code>
+      <p>You can find out what parameters a command accepts by using the Get-Help cmdlet.</p>
+      <p>In addition to native cmdlets, PowerShell will accept the following types of commands:</p>
+      <ul>
+        <li>Windows native - these are commands such as "notepad" or "ipconfig"</li>
+        <li>Aliases - these are commands from other systems, such as "ls" or "dir", which are mapped to PowerShell
+          cmdlets.</li>
+        <li>Script</li>
+      </ul>
+    </section>
+
+    <section id="Modules" class="main-section">
+      <header>
+        <h2 class="main-section-headers">Modules</h2>
+      </header>
+      <p>A module is a package that contains PowerShell commands, such as cmdlets, providers, functions, workflows,
+        variables, and aliases. Windows comes with several Modules preinstalled. In addition, some applications (e.g.
+        Active Directy) will
+        install Modules to Windows which allow you to manage them</p>
+      <p>You can create your own Modules to organise your commands and functions. These modules can then be shared with
+        other people. Microsoft host a repository called the <a href="https://www.powershellgallery.com/">PowerShell
+          Gallery</a> for
+        sharing and acquiring Modules.</p>
+      <p>You can return a list of available Modules by using the following cmdlet:</p>
+      <code>Find-Module</code>
+
+    </section>
+
+    <section id="Properties" class="main-section">
+      <header>
+        <h2 class="main-section-headers">Properties</h2>
+      </header>
+      <p>PowerShell uses structured collections of information called objects to represent the items in data stores or
+        the state of the computer. Typically, you work with object that are part of the Microsoft .NET Framework, but
+        you can also create
+        custom objects in PowerShell.</p>
+      <p>The association between an item and its object is very close. When you change an object, you usually change the
+        item that it represents. For example, when you get a file in PowerShell, you do not get the actual file.
+        Instead, you get a
+        FileInfo object that represents the file. When you change the FileInfo object, the file changes too.</p>
+      <p>Most objects have properties. Properties are the data that is associated with an object. Different types of
+        object have different properties. For example, a FileInfo object, which represents a file, has an
+        <strong>IsReadOnly</strong>
+        property that contains $True if the file the read-only attribute and $False if it does not. A DirectoryInfo
+        object, which represents a file system directory, has a Parent property that contains the path to the parent
+        directory.</p>
+      <p>You can return all of the properties by piping an object to the Get-Member cmdlet:</p>
+      <code>Get-Service | Get-Member</code>
+
+    </section>
+
+    <section id="PowerShell_Remoting" class="main-section">
+      <header>
+        <h2 class="main-section-headers">PowerShell Remoting</h2>
+      </header>
+      <p>You can run commands on one or hundreds of computers with a single PowerShell command. Windows PowerShell
+        supports remote computing by using various technologies, including WMI, RPC, and WS-Management.</p>
+      <p>PowerShell Core supports WMI, WS-Management, and SSH remoting. In PowerShell 6, RPC is no longer supported. In
+        PowerShell 7 and above, RPC is supported only in Windows.</p>
+      <p>PowerShell Remoting using the following port and protocols:</p>
+      <ul>
+        <li>TCP port 5985</li>
+        <li>http, using kerboros</li>
+      </ul>
+      <p>The following cmdlet can be used to open a session to one or more remote computers:</p>
+      <code>Enter-PSSession</code>
+    </section>
+
+  </main>
+
+</body>

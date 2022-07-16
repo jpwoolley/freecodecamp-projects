@@ -1,0 +1,142 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #222;
+  color: #eee;
+  font-family: 'Roboto Mono', monospace;
+}
+
+header {
+  height: 80px;
+  padding: 10px 20px 20px 10px;
+  border-bottom: 3px solid darkred;
+}
+
+header > img {
+  height: 100%;
+}
+
+header > nav {
+  margin-right: 25px;
+}
+
+nav > ul > li {
+
+  list-style-type: none;
+  display: inline;
+}
+
+nav > ul > li > button {
+  padding: 10px 20px 10px 20px;
+  border: 3px solid darkred;
+  background-color: inherit;
+}
+
+nav > ul > li > button > a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+nav > ul > li > button:hover {
+  padding: 10px 20px 10px 20px;
+  border: 3px solid darkred;
+  background-color: white;
+}
+
+nav > ul > li > button:hover > a {
+  text-align: center;
+  color: darkred;
+  text-decoration: none;
+}
+
+main {
+  position: absolute;
+  top: 150px;
+  width: 99%;
+}
+
+main > img {
+  height: 100%;
+}
+
+main > div > p {
+  width: 500px;
+}
+
+footer {
+  border-top: 3px solid darkred;
+}
+
+.flex-container-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-container-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.flex-container-bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-item-header-1 {
+  order: 1;
+}
+
+.flex-item-header-2 {
+  order: 2;
+}
+
+.sticky-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  z-index: 999;
+  background-color: #222;
+}
+
+.sticky-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: auto;
+  z-index: 999;
+  background-color: #222;
+}
+
+/* media query for mobile devices*/
+@media (max-width: 480px){
+
+  body {
+    background-color: white;
+  }
+
+  nav > ul > li {
+    display: block;
+  }
+
+  .flex-container-header {
+    flex-direction: column;
+  }
+
+  .flex-container-main {
+    flex-direction: column;
+  }
+}
